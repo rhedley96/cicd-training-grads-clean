@@ -1,0 +1,18 @@
+name: Docker Build
+
+# Run manually from the Actions tab ("Run workflow" button)
+on:
+  workflow_dispatch:
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v4
+
+      - name: docker build
+        run: docker build -t cicd-training-2026 . 
+        
+        
