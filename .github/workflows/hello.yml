@@ -1,4 +1,4 @@
-name: 1 - Hello James
+name: 1 - Hello Becca
 
 # Run manually from the Actions tab ("Run workflow" button)
 on:
@@ -9,4 +9,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Say hello
-        run: echo "Hello James"
+        run: echo "Hello Becca"
