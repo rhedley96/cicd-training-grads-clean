@@ -7,12 +7,20 @@ on:
 jobs:
   hello:
     runs-on: ubuntu-latest
-    
-    steps:
-      - name: checkout code
-        uses: actions/checkout@v4
+    steps:  
 
-      - name: docker build
-        run: docker build -t cicd-training-2026 . 
+    - name: checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up java
+      uses: actions/setup-java@v5
+      with:
+        distribution: temurin
+        java-version: '25'          
+
+    - name: tests
+      run: mvn -B test 
         
-        
+
+    - name: docker build
+      run: docker build -t cicd-training-2026 . 
